@@ -46,8 +46,8 @@ model{
 	}
 
 	for (i in 1:N){
-             sigma_noise_inv[i] ~ exponential(1.0/10);
-             to_vector(X[,i]) ~ normal(to_vector(S*diag_matrix(Lambda)* ((A .* D)[,i])), sigma_noise[i]);
+             sigma_noise_inv ~ exponential(1.0/10);
+             to_vector(X[,i]) ~ normal(to_vector(S*diag_matrix(Lambda)* ((A .* D)[,i])), sigma_noise);
 	}
        
 }
